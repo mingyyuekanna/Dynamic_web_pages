@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h2>register</h2>
+  <form action="/register" method="post">
+    <table>
+      <tr>
+        <td> 用户名:</td>
+        <td>
+          <input type="text" name="username" required autofocus placeholder="请输入用户名"><br><br>
+        </td>
+      </tr>
+      
+      <tr>
+        <td> 密码:</td>
+        <td>
+          <input type="password" name="password1" placeholder="请输入用户密码" required><br><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td> 确认密码:</td>
+        <td>
+          <input type="password" name="password2" placeholder="请确认用户密码" required><br><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>手机号码</td>
+        <td>
+          <input type="text" name="userphone" required placeholder="请输入用户手机">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          用户邮箱
+        </td>
+        <td>
+          <input type="email" name="userEmail" required placeholder="输入用户邮箱">
+        </td>
+      </tr>
+
+      <tr>
+        <td>用户性别</td>
+        <td > <select style="width: 100% " name="userSex">
+          <option value="x" selected="selected">男</option>
+          <option value="y">女</option>
+        </select>  </td>
+      </tr>
+
+
+      <tr>
+        <td colspan="2">
+          <button type="submit"> 注册</button>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <button type="reset"> 重置 </button>
+        </td>
+
+      </tr>
+      
+    </table>
+    
+  </form>
+
+</body>
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    let pwd1 = document.querySelector('input[name="password1"]').value;
+    let pwd2 = document.querySelector('input[name="password2"]').value;
+    let phone = document.querySelector('input[name="userphone"]').value;
+
+    if (pwd1 !== pwd2) {
+      alert("两次输入的密码不一致！");
+      e.preventDefault();
+      return;
+    }
+
+    let phonePattern = /^1[3-9]\d{9}$/;
+    if (!phonePattern.test(phone)) {
+      alert("请输入有效的手机号码！");
+      e.preventDefault();
+      return;
+    }
+  });
+</script>
+
+</html>

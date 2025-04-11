@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="F:\Servlet\Servlet01\web">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="F:/Servlet/Servlet01/web/WEB-INF/classes" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="F:/Servlet/Servlet01/lib/lombok-1.18.32.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/lombok-1.18.32.jar"/>
+    <PostResources base="F:/Servlet/Servlet01/lib/hamcrest-core-1.3.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/hamcrest-core-1.3.jar"/>
+    <PostResources base="F:/Servlet/Servlet01/lib/junit-4.13.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/junit-4.13.2.jar"/>
+    <PostResources base="C:/apache-tomcat-9.0.98/lib/jsp-api.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jsp-api.jar"/>
+    <PostResources base="C:/apache-tomcat-9.0.98/lib/servlet-api.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/servlet-api.jar"/>
+  </Resources>
+</Context>
