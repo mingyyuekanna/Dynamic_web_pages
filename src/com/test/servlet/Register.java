@@ -38,7 +38,6 @@ public class Register extends HttpServlet {
         UserMessage userMessage = new UserMessage(username, password, phone, email, sex);
    /*
         fuck construction
-
         userMessage.setUserName(username);
         userMessage.setUserPassword(password);
         userMessage.setUserPhone(phone);
