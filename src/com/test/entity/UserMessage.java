@@ -16,8 +16,8 @@ public class UserMessage {
     private String userSex;
 
     //定义有参构造函数
-    public UserMessage(int userId, String userName, String userPassword, String userPhone, String userEmail, String userSex) {
-        this.userId = userId;
+    public UserMessage( String userName, String userPassword, String userPhone, String userEmail, String userSex) {
+
         this.userName = userName;
         this.userPassword = userPassword;
         this.userPhone = userPhone;

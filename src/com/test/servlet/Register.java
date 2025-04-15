@@ -35,15 +35,19 @@ public class Register extends HttpServlet {
         String sex = req.getParameter("userSex");
         PrintWriter writer = resp.getWriter();
 
-        UserMessage userMessage = new UserMessage();
+        UserMessage userMessage = new UserMessage(username, password, phone, email, sex);
+   /*
+        fuck construction
+
         userMessage.setUserName(username);
         userMessage.setUserPassword(password);
         userMessage.setUserPhone(phone);
         userMessage.setUserEmail(email);
         userMessage.setUserSex(sex);
+    */
 
+        UserMessageDao userMessageDao = new UserMessageDao();
         try {
-            UserMessageDao userMessageDao=new UserMessageDao();
             int adduser = userMessageDao.adduser(userMessage);
             Connection connection = DBUtil.getConnection();
             if (adduser > 0) {
@@ -52,10 +56,8 @@ public class Register extends HttpServlet {
             } else {
                 writer.println("注册失败! ");
             }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (ClassNotFoundException |SQLException e) {
+            e.printStackTrace();
         }
     }
 
