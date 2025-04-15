@@ -28,7 +28,7 @@ public class Login extends HttpServlet {
         try {
             Connection connection = DBUtil.getConnection();
 
-            String sql="select * from users where username=? and password=?";
+            String sql="select * from user_message where user_name=? and user_password=?";
 
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
 

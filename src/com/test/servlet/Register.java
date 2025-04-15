@@ -1,5 +1,7 @@
 package com.test.servlet;
 
+import com.test.dao.UserMessageDao;
+import com.test.entity.UserMessage;
 import com.test.until.DBUtil;
 
 import javax.servlet.ServletException;
@@ -17,31 +19,38 @@ import java.sql.SQLException;
 public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        /*
+        设置字符集
+        获取用户在浏览器输入的注册信息
+        注册新用户
+
+         */
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         String username = req.getParameter("username");
         String password = req.getParameter("password1");
-        PrintWriter out = resp.getWriter();
+        String phone = req.getParameter("userphone");
+        String email = req.getParameter("userEmail");
+        String sex = req.getParameter("userSex");
+        PrintWriter writer = resp.getWriter();
+
+        UserMessage userMessage = new UserMessage();
+        userMessage.setUserName(username);
+        userMessage.setUserPassword(password);
+        userMessage.setUserPhone(phone);
+        userMessage.setUserEmail(email);
+        userMessage.setUserSex(sex);
 
         try {
+            UserMessageDao userMessageDao=new UserMessageDao();
+            int adduser = userMessageDao.adduser(userMessage);
             Connection connection = DBUtil.getConnection();
-
-            String sql = " insert into users (username,password) values (?,?) ";
-
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-            preparedStatement.setString(1, username);
-
-            preparedStatement.setString(2, password);
-
-            int rows = preparedStatement.executeUpdate();
-
-            if (rows > 0) {
-                out.println("注册成功！<a href='login.html'>去登录</a>");
+            if (adduser > 0) {
+                writer.println("注册成功！<a href='login.html'>去登录</a>");
                 connection.commit();
             } else {
-                out.println("注册失败! ");
+                writer.println("注册失败! ");
             }
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
