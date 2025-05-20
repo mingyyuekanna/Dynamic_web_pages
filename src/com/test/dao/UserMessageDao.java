@@ -85,7 +85,7 @@ public class UserMessageDao {
             //如果登陆成功 将登录用户信息封装到userMessage类对象中 并返回
 
             connection=DBUtil.getConnection();
-            String sql = "select * from user_Message where userId=? and userPassword=?;";
+            String sql = "select * from user_Message where user_Id=? and user_Password=?";
 
 
             preparedStatement=connection.prepareStatement(sql);
@@ -98,11 +98,11 @@ public class UserMessageDao {
             if(resultSet.next()){
                 UserMessage user=new UserMessage();
                 user.setUserId(resultSet.getInt("user_Id"));
-                user.setUserPassword(resultSet.getString("user_name"));
-                user.setUserPhone(resultSet.getString("user_password"));
+                user.setUserName(resultSet.getString("user_name"));
+                user.setUserPassword(resultSet.getString("user_password"));
                 user.setUserPhone(resultSet.getString("user_phone"));
                 user.setUserEmail(resultSet.getString("user_email"));
-                user.setUserName(resultSet.getString("user_sex"));
+                user.setUserSex(resultSet.getString("user_sex"));
                 return user;
             }
         }finally {

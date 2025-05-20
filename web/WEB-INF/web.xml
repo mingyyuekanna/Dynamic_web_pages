@@ -4,7 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 <!--    web 项目默认欢迎页.... 不指定会404 有一些welcome-file-list找第一个         找到就显示 否则后推  -->
-    <welcome-file-list>
+
+   <!-- <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
-    </welcome-file-list>
+    </welcome-file-list>-->
+<!--    <session-config>
+        注意:这个是tmd分钟 谨慎设置
+        <session-timeout>600</session-timeout>
+    </session-config>-->
 </web-app>

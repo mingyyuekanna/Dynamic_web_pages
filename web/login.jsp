@@ -16,7 +16,7 @@
             <tr>
                 <td>用户编号</td>
                 <td>
-                 <input type="text" name="userId" placeholder="请输入用户编号" autofocus> <br>
+                 <input type="text" name="userId" placeholder="请输入用户编号" value="<%=request.getAttribute("userId")%>" autofocus> <br>
                 </td>
             </tr>
 
@@ -43,5 +43,9 @@
     <%=session.getAttribute("error")==null?"":session.getAttribute("error")%>
     <%-- 从范围对象中移除指定名字的数据 减轻服务器鸭力  --%>
     <%session.removeAttribute("error");%>
+
+    <%--  对密码的补全  --%>
+    <%=request.getAttribute("error")==null?"":request.getAttribute("error")%>
+<%--    <%=request.getAttribute("error")%>--%>
 </body>
 </html>
