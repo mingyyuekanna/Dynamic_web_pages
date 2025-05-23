@@ -13,5 +13,31 @@
     ....
 
 实例1
+    创建自定义过滤器->javax.servlet.filter
+
+    使用注解!
+
+示例2
+    写一个验证是否登录的玩具
+    ....暂定中
+
+el表达式:
+    最重要功能:从范围对象中取值 简化jsp中Java代码
+    el表达式常用格式
+    @{名字}
 
 
+2025-5-23
+JavaBean 必须是共有的类
+JavaBean 要提供一个无参的构造方法
+JavaBean 要为私有属性提供共有的getter&setter方法
+JavaBean 建议实现序列化接口
+                 在entity中的userMessage实现
+                 implements java.io.Serializable
+作用:当类实现了 数据可以实现输入输出流
+
+
+JSTL标签库
+扔进lib里面
+JSTL标签只能在JSP页面使用
+要导 ->jsp页面使用taglib指定导入JSTL标签库

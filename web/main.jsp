@@ -1,5 +1,6 @@
 <%@ page import="java.io.Writer" %>
-<%@ page import="com.test.entity.UserMessage" %><%--
+<%@ page import="com.test.entity.UserMessage" %>
+<%--
   Created by IntelliJ IDEA.
   User: qings
   Date: 2025/5/16
@@ -20,5 +21,17 @@
         ${user.userName}
     ,欢迎回来
     </div>
+
+
+<h2>获得test_filter表单控件的数据</h2>
+
+<ul>
+    <li> Java代码获取: <%= request.getParameter("msg")%> </li>
+    <li> el表达式获取:
+<%--       %{msg} el表达式会转为request.getAttrubite("msg")--%>
+<%--        el表达式提供了parm参数 表示request.getParameter()代码-> --%>
+        ${param.msg}
+    </li>
+</ul>
 </body>
 </html>

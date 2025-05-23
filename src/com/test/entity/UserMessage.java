@@ -5,9 +5,16 @@ import java.util.Objects;
 /**
  * 用户模块的实体类：当前类的一个对象可以封装USER_MESSAGE表中‘一行数据’
  *
- * @author qins
+ * @author qings
  */
-public class UserMessage {
+public class UserMessage implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    //....
+
+
+
     private int userId;
     private String userName;
     private String userPassword;
