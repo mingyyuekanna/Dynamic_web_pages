@@ -46,3 +46,39 @@ JSTL标签只能在JSP页面使用
 Summary:
 1.JavaBean
 2.
+
+
+5.30
+JavaWeb项目中可能有3中情况丢session_id
+->超链接 表单提交 重定向
+//友情链接 a站点->b站点 再从b站点回a站点时 丢session
+
+->解决方法:
+    <c:url ></c:url>
+    将session封装到url中 确保sessionID不丢失
+
+MVC架构
+    JavaWeb项目的两张模型
+        模型1:jsp+javabean
+            优点:开发速度快
+            缺点:视图的代码 业务逻辑 数据库代码都出现在jsp页面 程序维护升级困难
+
+        模型2:
+            MCV(classical)
+            视图层 view ->html css js el表达式 jstl标签
+           \|
+            控制层 control ->servlet springboot/could
+            |
+            模型层 model   ->业务逻辑
+            |                       |\
+            持久化层       ->dao JDBC
+
+
+
+
+
+
+
+
+
+

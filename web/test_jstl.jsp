@@ -97,6 +97,14 @@
         <br>
     </c:forEach>
 
+    <c:url value="main.jsp" var="MyURL">
+
+    </c:url>
+
+    <c:redirect url="${MyURL}" >
+        <%--        jstl只有重定向 无转发--%>
+    </c:redirect>
+
 
 </ol>
 </body>
